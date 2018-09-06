@@ -1,0 +1,6 @@
+.git
+.vscode/
+node_modules/
+package-lock.json
+src/config/dev_config.js
+.DS_Store
