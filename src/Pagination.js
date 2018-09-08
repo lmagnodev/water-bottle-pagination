@@ -39,7 +39,7 @@ class Pagination extends Component {
     let pages = [];
     
     for(let i = startPage; i <= endPage; i++) {
-      let pageClass = (i === this.props.currentPage) ? 'page active' : 'page';
+      let pageClass = (i === this.props.currentPage) ? this.props.classNames.active : this.props.classNames.default;
       pages.push(
         <div className={ pageClass } onClick={ this.props.goToPage(i) } key={ i }>{ i }</div>
       );
@@ -54,7 +54,7 @@ class Pagination extends Component {
     }
 
     return (
-      <div className="pagination" id="paginationContainer">
+      <div className={ this.props.classNames.container } id={ this.props.componentIds.container }>
         { this.getPages(this.getStartPage(), this.getEndPage()) }
       </div>
         
@@ -69,6 +69,14 @@ Pagination.defaultProps = {
   resultsCount: 100,
   maxPageItemCount: 10,
   maxResultsPerPage: 20,
+  classNames : {
+    active: 'page active',
+    default: 'page',
+    container: 'pagination'
+  },
+  componentIds: {
+    container: 'paginationContainer'
+  },
   goToPage: () => {}
 };
 

@@ -1,0 +1,18 @@
+.pagination {
+  display: flex;
+  justify-content: space-between;
+
+  .page {
+    border: solid 1px #A3E4D7;
+    width: 30px;
+    text-align: center;
+    cursor: pointer;
+    color: #A3E4D7;
+  }
+
+  .page.active {
+    border: solid 1px #D6DBDF;
+    color: #D6DBDF;
+    cursor: auto;
+  }
+}
